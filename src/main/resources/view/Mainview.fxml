@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="anchorpane_root" fx:id="anchorpane_root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tuc.isse.propra.MainviewController">
+   <children>
+      <SplitPane id="splitpane_main_scene" fx:id="splitpane_main_scene" dividerPositions="0.29797979797979796" layoutX="194.0" layoutY="120.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane id="anchorpane_left_splitpane" fx:id="anchorpane_left_splitpane" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="134.0">
+               <children>
+                  <Pane id="pane_image_control" fx:id="pane_image_control" layoutY="3.0" prefHeight="609.0" prefWidth="235.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button id="button_image_control_set_actual_image" fx:id="button_image_control_set_actual_image" layoutX="76.0" layoutY="190.0" mnemonicParsing="false" onAction="#handleTakeAnImage" text="Take a Photo" />
+                        <ImageView id="imageview_image_contol_actual_image" fx:id="imageview_image_contol_actual_image" fitHeight="150.0" fitWidth="200.0" layoutX="18.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button layoutX="90.0" layoutY="494.0" mnemonicParsing="false" onAction="#handleRefresh" text="Refresh" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane id="anchorpane_rigth_splitpane" fx:id="anchorpane_rigth_splitpane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane id="tabpane_workplace_recognition_database_statistics_help" fx:id="tabpane_workplace_recognition_database_statistics_help" layoutX="100.0" layoutY="99.0" prefHeight="398.0" prefWidth="417.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab id="tab_recognition" fx:id="tab_recognition" text="Recognition">
+                        <content>
+                          <AnchorPane id="anchorpane_recognition" fx:id="anchorpane_recognition" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView id="imageview_recognition_actual_image" fx:id="imageview_recognition_actual_image" fitHeight="340.0" fitWidth="531.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                                    <Button id="button_recognition_recognize_objects" fx:id="button_recognition_recognize_objects" layoutX="254.0" layoutY="365.0" mnemonicParsing="false" text="Recognize Object" onAction="#handleImageRecognition"/>
+                                    <Label id="label_recognition_object_is" fx:id="label_recognition_object_is" layoutX="238.0" layoutY="415.0" text="Object is:" />
+                                    <Label id="lable_recognition_object_recognized" fx:id="lable_recognition_object_recognized" layoutX="287.0" layoutY="415.0" prefHeight="17.0" prefWidth="0.0" />
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab id="tab_database" fx:id="tab_database" text="Database">
+                          <content>
+                            <AnchorPane id="anchorpane_database" fx:id="anchorpane_database" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TabPane id="tabpane_database_show_add_remove" fx:id="tabpane_database_show_add_remove" layoutX="76.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <tabs>
+                                        <Tab id="tab_add" fx:id="tab_add" text="Add">
+                                          <content>
+                                            <AnchorPane id="anchorpane_tab_add" fx:id="anchorpane_tab_add" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ImageView id="imageview_database_add_actual_image" fx:id="imageview_database_add_actual_image" fitHeight="230.0" fitWidth="350.0" layoutX="265.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
+                                                      <ListView id="listview_database_add_liststructures" fx:id="listview_database_add_liststructures" layoutX="14.0" layoutY="19.0" onMouseClicked="#handleSelectStructureID" prefHeight="480.0" prefWidth="160.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="30.0" />
+                                                      <TextField id="textfield_database_add_textstructure" fx:id="textfield_database_add_textstructure" layoutX="192.0" layoutY="279.0" prefHeight="25.0" prefWidth="235.0" promptText="Structur auswählen" AnchorPane.rightAnchor="129.0" />
+                                                      <Button id="button_database_add_submit" fx:id="button_database_add_submit" layoutX="433.0" layoutY="279.0" mnemonicParsing="false" onAction="#handleAddNewImageToDatabase" prefHeight="25.0" prefWidth="109.0" text="Bestätigen" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="15.0" />
+                                                      <TextField id="textfield_database_add_filedisplay" fx:id="textfield_database_add_filedisplay" layoutX="192.0" layoutY="320.0" onAction="#handleSelectFileFromSystem" prefHeight="25.0" prefWidth="235.0" AnchorPane.rightAnchor="130.0" />
+                                                      <Button id="button_database_add_selectfile" fx:id="button_database_add_selectfile" layoutX="433.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleSelectFileFromSystem" prefHeight="25.0" prefWidth="109.0" text="Datei auswählen" AnchorPane.leftAnchor="433.0" AnchorPane.rightAnchor="15.0" />
+                                                      <Button fx:id="button_database_add_newStruct" layoutX="448.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleCreateNewStruct" text="Neue Struct" />
+                                                      <TextField id="textfield_database_add_filedisplay" fx:id="textfield_database_add_structType" layoutX="193.0" layoutY="359.0" prefHeight="25.0" prefWidth="235.0" promptText="Structurtyp" />
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                        <Tab id="tab_remove" fx:id="tab_remove" text="Remove">
+                                          <content>
+                                            <AnchorPane id="anchorpane_tab_remove" fx:id="anchorpane_tab_remove" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ListView fx:id="listview_database_remove_liststructures" layoutX="14.0" layoutY="27.0" onMouseClicked="#handleSelectImageStructure" prefHeight="480.0" prefWidth="160.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="30.0" />
+                                                      <Button fx:id="button_database_remove_previous" layoutX="253.0" layoutY="423.0" mnemonicParsing="false" onAction="#handlePreviousImage" text="&lt;-" />
+                                                      <Button fx:id="button_database_remove_del_struct" layoutX="294.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleDelStruct" text="Del Struct" />
+                                                      <Button fx:id="button_database_remove_del_image" layoutX="373.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleDelImage" text="Del image" />
+                                                      <Button fx:id="button_database_remove_next" layoutX="457.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleNextImage" text="-&gt;" />
+                                                      <ImageView fx:id="imageview_remove" fitHeight="230.0" fitWidth="350.0" layoutX="188.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="30.0" />
+                                                   </children></AnchorPane>
+                                          </content>
+                                        </Tab>
+                                      </tabs>
+                                    </TabPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab id="tab_statistic" fx:id="tab_statistic" text="Statistics">
+                          <content>
+                            <AnchorPane id="anchorpane_tab_statistic" fx:id="anchorpane_tab_statistic" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <PieChart fx:id="statistic_piechart" layoutX="29.0" layoutY="85.0" />
+                                 </children></AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab id="tab_help" fx:id="tab_help" text="Help">
+                          <content>
+                            <AnchorPane id="anchorpane_tab_help" fx:id="anchorpane_tab_help" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

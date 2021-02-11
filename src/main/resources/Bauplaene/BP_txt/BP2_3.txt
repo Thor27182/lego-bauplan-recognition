@@ -1,0 +1,10 @@
+Bauplan 2_3
+width,length,height
+2*2*1 Blue(11,12,21,22)
+2*2*1 Blue(11,12,21,22)
+
+lwr_block - upper_block
+blue11-blue11
+blue12-blue12
+blue21-blue21
+blue22-blue22
