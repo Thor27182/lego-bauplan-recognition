@@ -1,6 +1,8 @@
 Lego-Bauplan-Recognition
 ========================
 
+Diese Anwendung wurde im Rahmen des Modul "Programmierparktikum" der TU Clausthal entwickelt. Bei Zeiten entwickel ich die Anwedung zu Übungszwecken nochmal, da sie sehr stark verbugged. Ein Idee wäre C++, da dies einheitlich mit Opencv und Tensorflow funktioniert. Für die GUI wäre Qt angebracht. 
+
 Dieses Anwendung analysiert die Profile von Lego-Baugruppen in Voll-,
 Hohl- und offene Profile.
 
